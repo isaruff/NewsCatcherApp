@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_nav_graph"
+    app:startDestination="@id/newsFragment">
+    <fragment
+        android:id="@+id/newsFragment"
+        android:name="com.example.newscatcherapp.fragments.NewsFragment"
+        android:label="fragment_news"
+        tools:layout="@layout/fragment_news" />
+    <fragment
+        android:id="@+id/expandedNewsFragment"
+        android:name="com.example.newscatcherapp.fragments.ExpandedNewsFragment"
+        android:label="fragment_expanded_news"
+        tools:layout="@layout/fragment_expanded_news" >
+        <argument
+            android:name="model"
+            app:argType="com.example.newscatcherapp.database.SavedArticle" />
+    </fragment>
+    <fragment
+        android:id="@+id/saveWindowFragment"
+        android:name="com.example.newscatcherapp.fragments.SaveWindowFragment"
+        android:label="fragment_save_window"
+        tools:layout="@layout/fragment_save_window" />
+    <action
+        android:id="@+id/action_global_expandedNewsFragment"
+        app:destination="@id/expandedNewsFragment"
+        app:enterAnim="@android:anim/fade_in"
+        app:exitAnim="@android:anim/fade_out"
+        app:popEnterAnim="@android:anim/fade_in"
+        app:popExitAnim="@android:anim/fade_out" />
+</navigation>
