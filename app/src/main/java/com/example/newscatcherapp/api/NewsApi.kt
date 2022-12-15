@@ -1,5 +1,6 @@
 package com.example.newscatcherapp.api
 
+import com.example.newscatcherapp.API_KEY
 import com.example.newscatcherapp.model.NewsResponseData
 import retrofit2.Response
 import retrofit2.http.GET
@@ -11,7 +12,7 @@ interface NewsApi {
 
     @GET("/v2/search?")
     suspend fun getData(
-        @Header("x-api-key") key: String = "OR3kG_x9yZhXo4JpfmuPZOUMR-3U-_TNbmUxcgKDCLQ",
+        @Header("x-api-key") key: String = API_KEY,
         @Query("q") search : String,
         @Query("lang") lang : String
 
